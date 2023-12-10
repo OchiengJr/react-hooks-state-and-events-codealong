@@ -1,16 +1,25 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function Toggle() {
-  const [isOn, setIsOn] = useState(false)
+  // Use destructuring to get isOn and setIsOn from useState
+  const [isOn, setIsOn] = useState(false);
 
-  function handleClick(){
-    setIsOn((isOn) => !isOn);
+  // Function to handle button click and toggle isOn
+  function handleClick() {
+    setIsOn((prevIsOn) => !prevIsOn);
   }
 
-  const color = isOn ? "red" : "white"
-  return (<button onClick={handleClick} style={{background: color}}>
-            {isOn ? "ON" : "OFF"}
-          </button>);
+  // Determine button text and color based on the state (isOn)
+  const buttonText = isOn ? "ON" : "OFF";
+  const buttonColor = isOn ? "red" : "white";
+
+  // Return the button with onClick event and dynamic styles
+  return (
+    <button onClick={handleClick} style={{ background: buttonColor }}>
+      {buttonText}
+    </button>
+  );
 }
 
 export default Toggle;
+
