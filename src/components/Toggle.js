@@ -5,7 +5,7 @@ function Toggle() {
   const [isOn, setIsOn] = useState(false);
 
   // Function to handle button click and toggle isOn
-  function handleClick() {
+  function toggleState() {
     setIsOn((prevIsOn) => !prevIsOn);
   }
 
@@ -15,7 +15,7 @@ function Toggle() {
 
   // Return the button with onClick event and dynamic styles
   return (
-    <button onClick={handleClick} style={{ background: buttonColor }}>
+    <button onClick={toggleState} style={{ background: buttonColor }}>
       {buttonText}
     </button>
   );
